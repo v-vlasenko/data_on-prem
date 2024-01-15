@@ -13,7 +13,7 @@ variable "acc_id" {
 
 variable "token" {
   description = "Scalr token with admin permissions. You may use the one from the PCFG."
-  sensitive = true
+#  sensitive = true
 }
 
 variable "opa_version" {
