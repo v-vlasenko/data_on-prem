@@ -1,7 +1,5 @@
 # README
 
-> **Note:** ⚠️ You can't create modules with `null` provider as it will result in failed run due to Terraform specifics (most likely a bug).
-
 Before running this code, please ensure the following steps are completed:
 
 1. **Enable "Agent Pools" in the Admin App:**
