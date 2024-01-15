@@ -24,7 +24,7 @@ resource "scalr_module" "report_module" {
 
 resource "null_resource" "wait_for_module" {
   count = 50
-  depends_on = [ scalr_module.report_module[count.index] ]
+  depends_on = [ scalr_module.report_module ]
   provisioner "local-exec" {
     command = "sed 's/url = \"your_url_here\"/url = \"https://$${SCALR_HOSTNAME}/api/iacp/v3/modules/${scalr_module.report_module[count.index].id}\"/; s/bearer_token = \"your_bearer_token_here\"/bearer_token = \"${var.token}\"/' wait_for_module.py > wait_for_module_${count.index}.py && "
   }
@@ -34,7 +34,7 @@ data "scalr_module_version" "report_get_modver_id" {
   count   = 50
   source  = "${scalr_environment.report_env[count.index].id}/${scalr_module.report_module[count.index].name}/${scalr_module.report_module[count.index].module_provider}"
   version = var.module_existing_version_number
-  depends_on = [ null_resource.wait_for_module[count.index] ]
+  depends_on = [ null_resource.wait_for_module]
 }
 
 resource "scalr_workspace" "report_ws" {

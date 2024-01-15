@@ -50,7 +50,7 @@ variable "module_vcs-repo_tag-prefix" {
 }
 
 variable "module_existing_version_number" {
-  description = "Specify the module semversion to use it in the data source"
+  description = "Specify the semversion of the module that will be created. I.e. 0.0.2"
 }
 
 variable "pcfg_gcp_credentials" {
