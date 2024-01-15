@@ -53,6 +53,14 @@ variable "module_existing_version_number" {
   description = "Specify the semversion of the module that will be created. I.e. 0.0.2"
 }
 
+variable "module_name" {
+  description = "The name of the module you configured to be created"
+}
+
+variable "module_provider" {
+  description = "The provider of the module you configured to be created"
+}
+
 variable "pcfg_gcp_credentials" {
   description = "Google service account key file in JSON format."
   sensitive   = true

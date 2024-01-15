@@ -32,7 +32,7 @@ resource "null_resource" "wait_for_module" {
 
 data "scalr_module_version" "report_get_modver_id" {
   count   = 50
-  source  = "${scalr_environment.report_env[count.index].id}/${scalr_module.report_module[1].name}/${scalr_module.report_module[1].module_provider}"
+  source  = "${scalr_environment.report_env[count.index].id}/${var.module_name}/${var.module_provider}"
   version = var.module_existing_version_number
   depends_on = [ null_resource.wait_for_module]
 }
