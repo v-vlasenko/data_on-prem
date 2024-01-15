@@ -17,4 +17,7 @@ Before running this code, please ensure the following steps are completed:
 5. **Configure Workspace Settings with the `.tfvars` File:**
    Set the `.tfvars` file as a var-file in the workspace settings. This ensures that the code utilizes the specified variables during execution.
 
+6. **Check the Variable Assistant on the workspace page:** 
+   This will allow you to insert all sensitive data and some other info that varies depending on the container.
+
 Once these steps are completed, you are ready to run the code.
