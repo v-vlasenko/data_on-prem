@@ -16,6 +16,10 @@ variable "token" {
 #  sensitive = true
 }
 
+variable "scalr_url" {
+  description = "Scalr URL you create your resources in. WITHOUT the /v2/ part. Example: https://scalr-iacp.scalr.io"
+}
+
 variable "opa_version" {
   description = "OPA version used to create policy group. Should be one of available with current instance."
   default     = "0.32.0"
