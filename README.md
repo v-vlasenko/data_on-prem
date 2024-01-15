@@ -6,7 +6,7 @@ Before running this code, please ensure the following steps are completed:
    Make sure that "Agent Pools" are enabled for your account in the Admin App. Otherwise, the run will fail due to AP unavailability.
 
 2. **Set Quotas:**
-   Ensure that your environment quota is set to a minimum of 55 environments. 
+   Better to set high quotas for environments, workspaces and modules. By default, this plan generated 23 environments with workspace and module in each of them. 
 
 3. **Attach Scalr Provider Configuration to the Workspace:**
    Attach the Scalr provider configuration to your workspace. This connection is crucial for the code to interact seamlessly with Scalr.
