@@ -14,7 +14,7 @@ resource "scalr_module" "report_module" {
   count = 50
   account_id      = var.acc_id
   environment_id  = scalr_environment.report_env[count.index].id
-  vcs_provider_id = scalr_vcs_provider.vcs
+  vcs_provider_id = scalr_vcs_provider.vcs.id
   vcs_repo {
     identifier = var.module_vcs-repo_identifier
     path       = var.module_vcs-repo_path
