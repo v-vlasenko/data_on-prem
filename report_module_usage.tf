@@ -4,14 +4,14 @@
 
 
 resource "scalr_environment" "report_env" {
-  count = 50
+  count = 21
   name                            = "REPORTS_env_namespace_${count.index}"
   account_id                      = var.acc_id
   cost_estimation_enabled         = false
 }
 
 resource "scalr_module" "report_module" {
-  count = 50
+  count = 21
   account_id      = var.acc_id
   environment_id  = scalr_environment.report_env[count.index].id
   vcs_provider_id = scalr_vcs_provider.vcs.id
@@ -23,7 +23,7 @@ resource "scalr_module" "report_module" {
 }
 
 resource "null_resource" "wait_for_module" {
-  count = 50
+  count = 21
   depends_on = [ scalr_module.report_module ]
   provisioner "local-exec" {
     command = "sed 's#url = \"your_url_here\"#url = \"https://${var.scalr_url}/api/iacp/v3/modules/${scalr_module.report_module[count.index].id}\"#; s#bearer_token = \"your_bearer_token_here\"#bearer_token = \"${var.token}\"#' wait_for_module.py > wait_for_module_${count.index}.py && pip install requests && python3 wait_for_module_${count.index}.py"
@@ -31,14 +31,14 @@ resource "null_resource" "wait_for_module" {
 }
 
 data "scalr_module_version" "report_get_modver_id" {
-  count   = 50
+  count   = 21
   source  = "${scalr_environment.report_env[count.index].id}/${var.module_name}/${var.module_provider}"
   version = var.module_existing_version_number
   depends_on = [ null_resource.wait_for_module]
 }
 
 resource "scalr_workspace" "report_ws" {
-  count = 50
+  count = 21
   environment_id = scalr_environment.report_env[count.index].id
 
   name              = "REPORTS_module_ws_${count.index}"
