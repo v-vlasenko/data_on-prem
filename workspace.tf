@@ -22,7 +22,7 @@ resource "scalr_workspace" "ws_cli" {
 
 resource "scalr_workspace_run_schedule" "run-schedule" {
   workspace_id   = scalr_workspace.ws_vcs.id
-  apply_schedule = "* * * * *"
+  apply_schedule = "0 * * * *"
 }
 
 resource "scalr_run_trigger" "run-trigger" {
