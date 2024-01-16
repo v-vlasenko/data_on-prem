@@ -7,11 +7,6 @@ variable "base_vcs_token" {
   sensitive = true
 }
 
-variable "token" {
-  description = "Scalr token with admin permissions. You may use the one from the PCFG."
-#  sensitive = true
-}
-
 variable "scalr_url" {
   description = "Scalr URL you create your resources in. WITHOUT the /v2/ part. Example: https://scalr-iacp.scalr.io"
 }
