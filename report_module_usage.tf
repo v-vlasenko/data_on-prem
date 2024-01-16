@@ -45,5 +45,5 @@ resource "scalr_workspace" "report_ws" {
 
 variable "token" {
   description = "Scalr token with admin permissions. You may use the one from the PCFG."
-  sensitive = trueы
+  sensitive = true
 }
