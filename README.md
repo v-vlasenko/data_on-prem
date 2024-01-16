@@ -1,5 +1,6 @@
 # READ BEFORE USING
 
+> **Note:** ⚠️ This template doesn't contain acc_id variable declaration and supposed to be run on the same on-prem instance you want to create resources in.
 
 ## Instruction
 
