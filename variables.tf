@@ -7,10 +7,6 @@ variable "base_vcs_token" {
   sensitive = true
 }
 
-variable "acc_id" {
-  description = "ID of the account you want to create resources in"
-}
-
 variable "token" {
   description = "Scalr token with admin permissions. You may use the one from the PCFG."
 #  sensitive = true

@@ -6,13 +6,11 @@
 resource "scalr_environment" "report_env" {
   count = 21
   name                            = "REPORTS_env_namespace_${count.index}"
-  account_id                      = var.acc_id
   cost_estimation_enabled         = false
 }
 
 resource "scalr_module" "report_module" {
   count = 21
-  account_id      = var.acc_id
   environment_id  = scalr_environment.report_env[count.index].id
   vcs_provider_id = scalr_vcs_provider.vcs.id
   vcs_repo {
@@ -43,4 +41,9 @@ resource "scalr_workspace" "report_ws" {
 
   name              = "REPORTS_module_ws_${count.index}"
   module_version_id = data.scalr_module_version.report_get_modver_id[count.index].id
+}
+
+variable "token" {
+  description = "Scalr token with admin permissions. You may use the one from the PCFG."
+  sensitive = trueы
 }

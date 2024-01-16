@@ -1,4 +1,7 @@
-# README
+# READ BEFORE USING
+
+
+## Instruction
 
 Before running this code, please ensure the following steps are completed:
 
@@ -21,3 +24,11 @@ Before running this code, please ensure the following steps are completed:
    This will allow you to insert all sensitive data and some other info that varies depending on the container.
 
 Once these steps are completed, you are ready to run the code.
+
+## Structure and resources
+
+This template utilizes almost every resource that is currently present for Scalr provider. The code is divided into a separate files (`env.tf`, `vcs.tf` etc) so it would be easier to find the needed resource and also contains a `variables.tf` file with all var declarations and annotations. 
+
+This plan **DOESN'T** create a data for the pagination testing purposes, it mainly creates one entity per type, but you can adjust it by adding `count` meta-argument. 
+
+The `report_module_usage.tf` on the other hand creates 21 env with a module and a workspace each and is designed to allow automatic creation of modules in order to test the "Modules in-use" report. It takes a few minutes to apply, so if you don't need this part, you can just change file extension to `.txt` or remove it from the repository
