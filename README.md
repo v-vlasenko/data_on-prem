@@ -18,10 +18,7 @@ Before running this code, please ensure the following steps are completed:
 4. **Set Variables in the `.tfvars` File:**
    Modify the variables in the `.tfvars` file according to your requirements. You can use mine as a reference or just follow the variable assistant in the workspace. I recommend setting everything in the `.tfvars` file (except for sensitive data) and storing it for the future needs.
 
-5. **Configure Workspace Settings with the `.tfvars` File:**
-   Set the `.tfvars` file as a var-file in the workspace settings. This ensures that the code utilizes the specified variables during execution.
-
-6. **Check the Variable Assistant on the workspace page:** 
+5. **Check the Variable Assistant on the workspace page:** 
    This will allow you to insert all sensitive data and some other info that varies depending on the container.
 
 Once these steps are completed, you are ready to run the code.
