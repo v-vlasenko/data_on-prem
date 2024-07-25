@@ -21,6 +21,9 @@ resource "scalr_module" "report_module" {
 }
 
 resource "null_resource" "install_requests" {
+  triggers = {
+    time = timestamp()
+  }
   provisioner "local-exec" {
     command = "python3 -m pip install requests"
   }
