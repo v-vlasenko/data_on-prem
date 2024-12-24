@@ -1,4 +1,4 @@
-resource "scalr_module" "module" {
+/*resource "scalr_module" "module" {
   environment_id  = scalr_environment.env_no_tag.id
   vcs_provider_id = scalr_vcs_provider.vcs.id
   vcs_repo {
@@ -7,3 +7,4 @@ resource "scalr_module" "module" {
     tag_prefix = var.module_vcs-repo_tag-prefix
   }
 }
+*/
