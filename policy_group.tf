@@ -1,6 +1,6 @@
 resource "scalr_policy_group" "policy" {
   name            = "auto_policy_${formatdate("DDMMYYYY", timestamp())}"
-  opa_version     = "0.55.0"
+  opa_version     = "0.32.0"
   vcs_provider_id = scalr_vcs_provider.vcs.id
   vcs_repo {
     identifier = var.policy_vcs-repo_identifier
